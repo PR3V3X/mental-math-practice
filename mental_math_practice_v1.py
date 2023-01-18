@@ -5,7 +5,7 @@ from random import randint
 def main():
     # This displays a menu for the user to look at.
     print("-" * 78)
-    print("|~~~>                  Welcome to Mental Math Practice 1.0!              <~~~|")
+    print("|~~~>                  Welcome to Mental Math Practice 1.1!              <~~~|")
     print("|~~~~~~>            A Simple Way to Enhance Mental Math Skills        <~~~~~~|")
     print("|~~~~~~~~~>                                                        <~~~~~~~~~|")
     print("|~~~~~~~~~~~~>                     Enjoy! :)                    <~~~~~~~~~~~~|")
@@ -17,19 +17,24 @@ def main():
     print("| Follow the instructions as shown below...                                  |")
     print("-" * 78)
 
-    # Allows the user to select the mode once, then work with problems.
+
+    # Allows for range & problem loop.
     while True:
         # Allows the user to select a mode they want to practice.
         print("| Select what you want to practice using the symbols: + - * / ...            |")
         mode = input("| Mode: + - * / => ")
 
-        # Allows for range & problem loop.
-        while True:
-            # Allows user to pick a range of numbers to practice in.
-            print("\n| Enter a range of numbers you want to work with...")
+        # Allows user to pick a range of numbers.
+
+        print("\n| Enter a range of numbers you want to work with...")
            
-            num1 = int(input("| Number 1 (Lower Number): "))
-            num2 = int(input("| Number 2 (Upper Number): "))
+        num1 = int(input("| Number 1 (Lower Number): "))
+        num2 = int(input("| Number 2 (Upper Number): "))
+
+        # Allows user to set amount of problems.
+        amount = int(input("| Enter the amount of problems you want to solve: "))
+
+        for x in range(amount):
 
             # Computes two random integers for problem generation.
             int1 = randint(num1, num2)
@@ -60,7 +65,7 @@ def main():
                 # Assesses whether correct or not, & displays correct answer.
                 print("| Your answer is: ", answer == correct_answer)
                 print(f"| The correct answer is {correct_answer}.\n")
-                
+                    
 
             elif mode == "*":
                 # Calculates the correct answer.
@@ -72,7 +77,7 @@ def main():
                 # Assesses whether correct or not, & displays correct answer.
                 print("| Your answer is: ", answer == correct_answer)
                 print(f"| The correct answer is {correct_answer}.\n")
-                
+                    
 
             elif mode == "/":
                 # Calculates the correct answer.
@@ -88,8 +93,9 @@ def main():
 
             else:
                 # Notifies user of incorrect choice entry.
-                print(f"\nThe choice you chose was: {mode}.")
+                print(f"\nThe mode you selected was: {mode}.")
                 print("That is not a valid entry. :(")
-                print("Please enter a valid choice by using the + - * / symbols.\n")
+                print("Please enter a valid mode by using the + - * / symbols.\n")
 
+        print("| You have finished!\n")
 main()
